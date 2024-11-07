@@ -1,0 +1,43 @@
+.rodape{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rodape p{
+    color: #a9afba;
+}
+.container_fale_conosco{
+    max-width: 500px;
+    margin: 80px auto;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.container_redes_sociais{
+    display: flex;
+    gap: 10px;
+}
+
+.container_redes_sociais img{
+    height: 30px;
+    width: auto;
+}
+
+.autor{
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    border-top: 1px solid #74727269;
+}
+
+.autor span{
+    color: #feb633;
+}

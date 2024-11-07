@@ -1,95 +1,95 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+import { useState } from "react";
+
+import estilos from "./page.module.css";
+import Topo from "@/componentes/Topo";
+import SecaoBanner from "@/componentes/SecaoBanner";
+import SecaoExperienciaTrabalho from "@/componentes/SecaoExperienciaTrabalho";
+import Card from "@/componentes/Card";
+import Rodape from "@/componentes/Rodape";
+
+import icoFacebook from "/public/facebook.png"
+import icoTwitter from "/public/twitter.png"
+import icoLinkedin from "/public/linkedin.png"
+import icoDribble from "/public/dribble.png"
+import icoBehance from "/public/behance.png"
+import icoGoogle from "/public/Google.png"
+
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+  const temaLight = estilos.container_pagina_light;
+  const temaDark = estilos.container_pagina_dark;
+
+  const experiencias = [
+    { data: "JUNHO 2012 - 2016", titulo: "Web Designer", empresa: "Pied Piper StartUp.", atividade: "Criação de Landing pages, sites institucionais e E-commerces completamente personalizados e otimizados para buscadores" },
+    { data: "AGOSTO 2016 - 2019", titulo: "Product Designer", empresa: "E Corp.", atividade: "Criação de modelos estratégicos de conversão identificando o cliente e mapeando toda a sua jornada de compra" },
+    { data: "FEVEREIRO 2019 - 2021", titulo: "Digital Consulting", empresa: "Arasaka Inc.", atividade: "Consultoria em estratégias digitais para todas as etapas do ciclo do projeto, desde a definição inicial até a execução" },
+  ]
+
+  const [tema, setTema] = useState(temaLight);
+  const [controle, setControle] = useState(true);
+
+  return (
+    <div className={tema}>
+
+      {/*Topo*/}
+      <Topo
+        temaLight={temaLight}
+        temaDark={temaDark}
+        setTema={setTema}
+        controle={controle}
+        setControle={setControle}
+      />
+
+      {/*Conteudo principal*/}
+      <main className={estilos.main}>
+
+        {/*Seção Banner*/}
+        <SecaoBanner />
+
+        {/*Seção Experiência de Trabalho */}
+        <SecaoExperienciaTrabalho controle={controle}>
+
+          <Card
+            controle={controle}
+            data={experiencias[0].data}
+            titulo={experiencias[0].titulo}
+            empresa={experiencias[0].empresa}
+            atividade={experiencias[0].atividade}
+          />
+
+          <Card
+            controle={controle}
+            data={experiencias[1].data}
+            titulo={experiencias[1].titulo}
+            empresa={experiencias[1].empresa}
+            atividade={experiencias[1].atividade}
+          />
+
+          <Card
+            controle={controle}
+            data={experiencias[2].data}
+            titulo={experiencias[2].titulo}
+            empresa={experiencias[2].empresa}
+            atividade={experiencias[2].atividade}
+          />
+
+
+        </SecaoExperienciaTrabalho >
+
+        {/* Rodapé */}
+        <Rodape 
+          icoFacebook={icoFacebook}
+          icoTwitter={icoTwitter}
+          icoLinkedin={icoLinkedin}
+          icoDribble={icoDribble}
+          icoBehance={icoBehance}
+          icoGoogle={icoGoogle}
+        />
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+
     </div>
   );
 }

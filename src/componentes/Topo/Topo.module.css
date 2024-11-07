@@ -1,0 +1,59 @@
+.container_topo_light{
+    background-color: #fff;
+    width: 100%;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+}
+
+.container_topo_dark{
+    background-color: #252525;
+    width: 100%;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+}
+
+
+.logo{
+    height: 30px;
+    width: auto;
+}
+
+.btn_troca_tema_light{
+    height: 35px;
+    background-color: #fff;
+    border: 1px solid #252525;
+    border-radius: 100px;
+    padding: 7px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_troca_tema_dark{
+    height: 35px;
+    background-color: #252525;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    padding: 7px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icone_tema_light{
+    height: 20px;
+    width: auto;
+}
+
+.icone_tema_dark{
+    height: 20px;
+    width: auto;
+}
