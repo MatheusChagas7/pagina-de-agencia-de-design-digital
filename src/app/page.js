@@ -13,7 +13,7 @@ import icoTwitter from "/public/twitter.png"
 import icoLinkedin from "/public/linkedin.png"
 import icoDribble from "/public/dribble.png"
 import icoBehance from "/public/behance.png"
-import icoGoogle from "/public/Google.png"
+import icoGoogle from "/public/google.png"
 
 
 export default function Home() {
